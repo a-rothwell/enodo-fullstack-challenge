@@ -1,25 +1,51 @@
-# Enodo Fullstack Engineering Challenge
+# How to run python api
 
-Welcome to our Fullstack Engineering Challenge repository. This README will guide you on how to participate in this challenge.
+```
+cd enodo-backend
+pip3 install -r requirements.txt
+cd enodo
+python3 run_api.py
+```
+A falcon api will start at [http://localhost:8000](http://localhost:8000) with the following routes
 
-Please fork this repo before you start working on the challenge. We will evaluate the code on the fork.
+```
+/search returns list of matching properties
+
+params:
+query_string: the address of the property you are looking for. Will return partial matches. Optional
+
+selected: if the record is currently selected. 0 for false; 1 for true. Optional
+
+limit: max number of records to return. Optional
 
 
-## Challenge
+/selected updates if a property is selected based on passed param
 
+params:
+property: Full Address of property. Required
 
-Front-end and backend to allow users to search, select, or unselect properties from the DB.
+selected: 0 for false. 1 for true. Required
+```
+# How to run the tests
 
-## Requirements
-- Build frontend with Element.js and Vue.js
-- Create DB from data in excel file (suggestion: Sqlite)
-- Create API to interact with database (suggestion: falcon, flask, express...)
-- Input field with [autocomplete](https://element.eleme.io/#/en-US/component/input#autocomplete), displaying the properties from the DB through the API.
-  - On Selection of search result, save as "Selected" to DB.
-- Table Showing selected properties:
-  - Column 1: Full Address
-  - Column 2: Class Description
-  - Column 3: Delete button
-- Include a delete button to unselect property from DB.
-- Add a test to your implementation.
-- Include a Readme on how to run your solution.
+```
+cd enodo-backend
+python3 tests.py
+```
+# How to run the vue frontend
+```
+npm install
+npm run serve
+```
+
+The frontend will start at [http://localhost:8080](http://localhost:8080)
+
+Frontend features:
+1. Property search with autocomplete
+2. Table updated on selection; change is reflected in database
+3. Map with marker at GPS coordinates of selected property
+4. Clicking on a marker will dispaly the associated address
+5. Clicking the trash can wil remove the property from the table and map
+
+Example below:
+![Example frontend](Example_Frontend.png)
