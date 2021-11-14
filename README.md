@@ -34,6 +34,7 @@ python3 tests.py
 ```
 # How to run the vue frontend
 ```
+cd enodo-frontend
 npm install
 npm run serve
 ```
