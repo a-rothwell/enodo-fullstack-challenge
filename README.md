@@ -45,8 +45,8 @@ Frontend features:
 1. Property search with autocomplete
 2. Table updated on selection; change is reflected in database
 3. Map with marker at GPS coordinates of selected property
-4. Clicking on a marker will dispaly the associated address
-5. Clicking the trash can wil remove the property from the table and map
+4. Clicking on a marker will display the associated address
+5. Clicking the trash can will remove the property from the table and map
 
 Example below:
 ![Example frontend](Example_Frontend.png)
